@@ -1,0 +1,65 @@
+@mixin center-block($width) {
+  margin: auto;
+  width: $width;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin flex($jc: flex-start, $ai: flex-start, $fd: row) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin bg-cover($url, $opacity) {
+  background: linear-gradient(hsla(0, 0, 0, $opacity), hsla(0, 0, 0, $opacity)), url($url) no-repeat center center fixed;
+  background-size: cover;
+}
+
+@mixin mq-min($min) {
+  @media screen and (min-width: $min) {
+    @content;
+  }
+}
+
+@mixin mq-max($max) {
+  @media screen and (max-width: $max - 1px) {
+    @content;
+  }
+}
+
+@mixin mq-min-max($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max - 1px) {
+    @content;
+  }
+}
+
+@mixin center($orientation, $position: absolute) {
+  position: $position;
+
+  @if $orientation == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  @else if $orientation == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+
+  @else if $orientation == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
