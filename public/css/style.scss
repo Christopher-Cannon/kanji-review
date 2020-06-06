@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Sen&display=swap');
+@import './variables';
+@import './functions';
+@import './mixins';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @include font-size($base-font-size);
+
+  @include mq-max($medium) {
+    @include font-size($mobile-font-size);
+  }
+}
+
+body,
+input,
+textarea {
+  background-color: colour(white);
+  color: colour(black);
+  font-family: 'Sen', Arial, sans-serif;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  @include font-size(16px);
+}
+
+.btn {
+  background-color: colour(white);
+  border: 3px solid colour(accent);
+  border-radius: 0.25rem;
+  outline: none;
+  padding: 0.25rem;
+
+  &:hover {
+    color: colour(accent);
+    cursor: pointer;
+    border: 3px solid colour(accent);
+  }
+
+  &:active {
+    background-color: colour(accent);
+    border: 3px solid colour(accent);
+    color: colour(white);
+  }
+}
+
+.group {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.page-width {
+  padding: 0.5rem;
+  width: 100%;
+  
+  @include mq-min($medium) {
+    margin: auto;
+    width: 900px;
+  }
+}
+
+#top-bar {
+  background-color: colour(dark-grey);
+  padding-bottom: 0.5rem;
+  width: 100%;
+
+  ul {
+    list-style: none;
+  }
+  
+  h1 {
+    float: left;
+  }
+
+  button {
+    float: right;
+    margin-top: 0.33rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    @include mq-min($small) {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  
+  h1,
+  a {
+    color: hsl(0, 0, 95%);
+  }
+
+  nav {
+    float: right;
+  }
+
+  ul {
+    @include mq-min($small) {
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+    }
+  }
+  
+  li {
+    @include mq-min($small) {
+      display: inline-block;
+
+      &:first-of-type {
+        margin-right: 1rem;
+      }
+    }
+  }
+  
+  a:hover {
+    color: colour(accent);
+  }
+}
+
+main {
+  p,
+  h3,
+  .page-heading {
+    margin: 2rem auto;
+  }
+
+  a {
+    color: colour(accent);
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  .review-remaining {
+    float: left;
+    position: absolute;
+  }
+
+  form {
+    input {
+      border: 3px solid colour(black);
+      border-radius: 0.25rem;
+      outline: none;
+      margin-bottom: 1rem;
+      padding: 0.25rem;
+      width: 100%;
+    }
+
+    input[type="number"]:focus {
+      border: 3px solid colour(accent);
+    }
+  }
+
+  .correct,
+  .incorrect {
+    color: colour(white);
+    @include font-size($base-font-size);
+    font-weight: bold;
+    padding: 1.1rem 0;
+    text-align: center;
+    width: 100%;
+    @include center(horizontal, fixed);
+    top: 0;
+  }
+
+  .correct {
+    background-color: colour(correct);
+  }
+
+  .incorrect {
+    background-color: colour(incorrect);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  #review-kanji {
+    @include font-size($base-font-size * 4);
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  #review-btns {
+    button {
+      margin-bottom: 0.5rem;
+      padding: 0.33rem 0;
+      width: 100%;
+
+      @include mq-min($medium) {
+        @include font-size($base-font-size);
+        margin-bottom: 1rem;
+        padding: 1rem;
+        width: 49%;
+
+        &:nth-child(2n) {
+          float: right;
+        }
+      }
+    }
+  }
+
+  .result-card {
+    border: 3px solid colour(black);
+    border-radius: 0.25rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    width: 100%;
+
+    span {
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    p,
+    a {
+      margin: 0.5rem auto 0.25rem;
+    }
+
+    p {
+
+      &:first-of-type span {
+        color: colour(incorrect);
+      }
+
+      &:last-of-type span {
+        color: colour(correct);
+      }
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    .result-card-id {
+      background-color: colour(black);
+      border-radius: 0.25rem;
+      color: colour(white);
+      padding: 0.25rem 0.5rem;
+    }
+
+    .result-card-kanji {
+      @include font-size($base-font-size*1.5);
+      float: right;
+      margin-top: -0.33rem;
+
+      @include mq-min($small) {
+        @include font-size($base-font-size*3);
+        margin-top: -0.7rem;
+      }
+    }
+  }
+  
+  .btn-return {
+    margin-top: 2rem;
+    padding: 1rem 0;
+    width: 100%;
+  }
+}

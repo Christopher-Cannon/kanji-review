@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 899px) {
+  html {
+    font-size: 25px;
+    font-size: 1.5625rem;
+  }
+}
+
+body,
+input,
+textarea {
+  background-color: #fafafa;
+  color: #0d0d0d;
+  font-family: 'Sen', Arial, sans-serif;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+.btn {
+  background-color: #fafafa;
+  border: 3px solid #e00661;
+  border-radius: 0.25rem;
+  outline: none;
+  padding: 0.25rem;
+}
+
+.btn:hover {
+  color: #e00661;
+  cursor: pointer;
+  border: 3px solid #e00661;
+}
+
+.btn:active {
+  background-color: #e00661;
+  border: 3px solid #e00661;
+  color: #fafafa;
+}
+
+.group {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.page-width {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  .page-width {
+    margin: auto;
+    width: 900px;
+  }
+}
+
+#top-bar {
+  background-color: #262626;
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+#top-bar ul {
+  list-style: none;
+}
+
+#top-bar h1 {
+  float: left;
+}
+
+#top-bar button {
+  float: right;
+  margin-top: 0.33rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@media screen and (min-width: 650px) {
+  #top-bar button {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+#top-bar h1,
+#top-bar a {
+  color: #f2f2f2;
+}
+
+#top-bar nav {
+  float: right;
+}
+
+@media screen and (min-width: 650px) {
+  #top-bar ul {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  #top-bar li {
+    display: inline-block;
+  }
+  #top-bar li:first-of-type {
+    margin-right: 1rem;
+  }
+}
+
+#top-bar a:hover {
+  color: #e00661;
+}
+
+main p,
+main h3,
+main .page-heading {
+  margin: 2rem auto;
+}
+
+main a {
+  color: #e00661;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+main a:hover {
+  text-decoration: underline;
+}
+
+main .review-remaining {
+  float: left;
+  position: absolute;
+}
+
+main form input {
+  border: 3px solid #0d0d0d;
+  border-radius: 0.25rem;
+  outline: none;
+  margin-bottom: 1rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+main form input[type="number"]:focus {
+  border: 3px solid #e00661;
+}
+
+main .correct,
+main .incorrect {
+  color: #fafafa;
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 1.1rem 0;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translate(-50%);
+  top: 0;
+}
+
+main .correct {
+  background-color: #57da0b;
+}
+
+main .incorrect {
+  background-color: #da0b0b;
+}
+
+main .hide {
+  display: none;
+}
+
+main #review-kanji {
+  font-size: 80px;
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+main #review-btns button {
+  margin-bottom: 0.5rem;
+  padding: 0.33rem 0;
+  width: 100%;
+}
+
+@media screen and (min-width: 900px) {
+  main #review-btns button {
+    font-size: 20px;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    width: 49%;
+  }
+  main #review-btns button:nth-child(2n) {
+    float: right;
+  }
+}
+
+main .result-card {
+  border: 3px solid #0d0d0d;
+  border-radius: 0.25rem;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+main .result-card span {
+  display: inline-block;
+  font-weight: bold;
+}
+
+main .result-card p,
+main .result-card a {
+  margin: 0.5rem auto 0.25rem;
+}
+
+main .result-card p:first-of-type span {
+  color: #da0b0b;
+}
+
+main .result-card p:last-of-type span {
+  color: #57da0b;
+}
+
+main .result-card a {
+  display: inline-block;
+}
+
+main .result-card .result-card-id {
+  background-color: #0d0d0d;
+  border-radius: 0.25rem;
+  color: #fafafa;
+  padding: 0.25rem 0.5rem;
+}
+
+main .result-card .result-card-kanji {
+  font-size: 30px;
+  font-size: 1.875rem;
+  float: right;
+  margin-top: -0.33rem;
+}
+
+@media screen and (min-width: 650px) {
+  main .result-card .result-card-kanji {
+    font-size: 60px;
+    font-size: 3.75rem;
+    margin-top: -0.7rem;
+  }
+}
+
+main .btn-return {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+/*# sourceMappingURL=style.css.map */
