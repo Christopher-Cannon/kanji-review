@@ -1,4 +1,4 @@
-# kanjireview
+# kanji-review
 
 ## Project setup
 ```
