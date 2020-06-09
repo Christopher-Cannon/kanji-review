@@ -8,7 +8,7 @@
 
     <p>Correct answer: <span>{{ question["correct"] }}</span></p>
 
-    <a target="_blank" :href="'https://jisho.org/search/' + question['kanji']">View on Jisho...</a>
+    <a target="_blank" :href="'https://jisho.org/search/' + question['kanji'] + ' %23kanji'">View on Jisho...</a>
   </div>
 </template>
 

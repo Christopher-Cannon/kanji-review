@@ -40,9 +40,18 @@ button {
   outline: none;
   padding: 0.25rem;
 
-  &:hover {
-    cursor: pointer;
-    background-color: colour(accent-light);
+  @include mq-min($small) {
+    &:hover {
+      cursor: pointer;
+      background-color: colour(accent-light);
+    }
+  }
+
+  @include mq-max($small) {
+    &:active {
+      cursor: pointer;
+      background-color: colour(accent-light);
+    }
   }
 
   &:disabled:hover {
@@ -131,7 +140,8 @@ button {
 main {
   p,
   h3,
-  .page-heading {
+  .page-heading,
+  form {
     margin: 2rem auto;
   }
 

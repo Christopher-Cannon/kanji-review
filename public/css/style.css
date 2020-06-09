@@ -44,9 +44,18 @@ button {
   padding: 0.25rem;
 }
 
-.btn:hover {
-  cursor: pointer;
-  background-color: #fdb4d3;
+@media screen and (min-width: 650px) {
+  .btn:hover {
+    cursor: pointer;
+    background-color: #fdb4d3;
+  }
+}
+
+@media screen and (max-width: 649px) {
+  .btn:active {
+    cursor: pointer;
+    background-color: #fdb4d3;
+  }
 }
 
 .btn:disabled:hover {
@@ -136,7 +145,8 @@ button {
 
 main p,
 main h3,
-main .page-heading {
+main .page-heading,
+main form {
   margin: 2rem auto;
 }
 
