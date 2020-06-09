@@ -117,7 +117,6 @@ export default {
           this.unanswered++;
         }
       });
-      console.log(`Unanswered: ${this.unanswered} - Quiz Length: ${this.quiz.length}`)
       // Return to setup immediately if no questions were attempted
       if (this.unanswered === this.quiz.length) {
         this.mode = 'setup';
