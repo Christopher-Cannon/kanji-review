@@ -44,8 +44,12 @@ export default {
   },
   methods: {
     newQuiz(quizParams) {
+      // Ensure state is reset
       this.quiz = [];
+      this.min = 1;
+      this.max = 2200;
       this.correctAnswers = 0;
+      this.unanswered = 0;
 
       this.min = quizParams["minRange"];
       this.max = quizParams["maxRange"];
@@ -113,14 +117,15 @@ export default {
           this.unanswered++;
         }
       });
-      this.mode = 'results';
+      console.log(`Unanswered: ${this.unanswered} - Quiz Length: ${this.quiz.length}`)
+      // Return to setup immediately if no questions were attempted
+      if (this.unanswered === this.quiz.length) {
+        this.mode = 'setup';
+      } else {
+        this.mode = 'results';
+      }
     },
     resetState() {
-      this.quiz = [];
-      this.correctAnswers = 0;
-      this.min = 1;
-      this.max = 2200;
-
       this.mode = 'setup';
     }
   }

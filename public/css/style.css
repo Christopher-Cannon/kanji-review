@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Sen&display=swap");
 * {
   -webkit-box-sizing: border-box;
@@ -44,9 +45,12 @@ button {
 }
 
 .btn:hover {
-  color: #e00661;
   cursor: pointer;
-  border: 3px solid #e00661;
+  background-color: #fdb4d3;
+}
+
+.btn:disabled:hover {
+  background-color: #fafafa;
 }
 
 .btn:active {
@@ -84,12 +88,12 @@ button {
 }
 
 #top-bar h1 {
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   float: left;
 }
 
 #top-bar button {
   float: right;
-  margin-top: 0.33rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
@@ -170,7 +174,7 @@ main .incorrect {
   font-size: 20px;
   font-size: 1.25rem;
   font-weight: bold;
-  padding: 1.1rem 0;
+  padding: 1rem 0;
   text-align: center;
   width: 100%;
   position: fixed;
@@ -193,10 +197,17 @@ main .hide {
 }
 
 main #review-kanji {
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 80px;
   font-size: 5rem;
-  margin-bottom: 0.5rem;
+  margin: 1rem auto 1.5rem;
   text-align: center;
+}
+
+@media screen and (min-width: 650px) {
+  main #review-kanji {
+    margin: 2rem auto 2.5rem;
+  }
 }
 
 main #review-btns button {
@@ -256,6 +267,7 @@ main .result-card .result-card-id {
 }
 
 main .result-card .result-card-kanji {
+  font-family: "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
   font-size: 30px;
   font-size: 1.875rem;
   float: right;
