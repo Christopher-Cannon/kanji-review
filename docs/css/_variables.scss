@@ -13,9 +13,12 @@ $colours: (
   dark-grey: hsl(0, 0, 15%),
   black: hsl(0, 0, 5%),
   accent: hsl(335, 95%, 45%),
+  accent-light: hsl(335, 95%, 85%),
   correct: hsl(98, 90%, 45%),
   incorrect: hsl(0, 90%, 45%),
 );
 
 $base-font-size: 20px;
 $mobile-font-size: $base-font-size * 1.25;
+
+$japanese-font: "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;

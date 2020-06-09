@@ -40,10 +40,22 @@ button {
   outline: none;
   padding: 0.25rem;
 
-  &:hover {
-    color: colour(accent);
-    cursor: pointer;
-    border: 3px solid colour(accent);
+  @include mq-min($small) {
+    &:hover {
+      cursor: pointer;
+      background-color: colour(accent-light);
+    }
+  }
+
+  @include mq-max($small) {
+    &:active {
+      cursor: pointer;
+      background-color: colour(accent-light);
+    }
+  }
+
+  &:disabled:hover {
+    background-color: colour(white);
   }
 
   &:active {
@@ -79,12 +91,12 @@ button {
   }
   
   h1 {
+    font-family: $japanese-font;
     float: left;
   }
 
   button {
     float: right;
-    margin-top: 0.33rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
 
@@ -128,7 +140,8 @@ button {
 main {
   p,
   h3,
-  .page-heading {
+  .page-heading,
+  form {
     margin: 2rem auto;
   }
 
@@ -167,7 +180,7 @@ main {
     color: colour(white);
     @include font-size($base-font-size);
     font-weight: bold;
-    padding: 1.1rem 0;
+    padding: 1rem 0;
     text-align: center;
     width: 100%;
     @include center(horizontal, fixed);
@@ -187,9 +200,14 @@ main {
   }
 
   #review-kanji {
+    font-family: $japanese-font;
     @include font-size($base-font-size * 4);
-    margin-bottom: 0.5rem;
+    margin: 1rem auto 1.5rem;
     text-align: center;
+
+    @include mq-min($small) {
+      margin: 2rem auto 2.5rem;
+    }
   }
 
   #review-btns {
@@ -251,6 +269,7 @@ main {
     }
 
     .result-card-kanji {
+      font-family: $japanese-font;
       @include font-size($base-font-size*1.5);
       float: right;
       margin-top: -0.33rem;
